@@ -1,3 +1,5 @@
+https://ashfurrow.com/blog/static-site-search-with-middleman-and-lunrjs/
+
 # Middleman::Search
 
 LunrJS-based search for Middleman.
