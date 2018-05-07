@@ -1,8 +1,10 @@
-https://ashfurrow.com/blog/static-site-search-with-middleman-and-lunrjs/
-
 # Middleman::Search
 
 LunrJS-based search for Middleman.
+
+# Guide
+
+https://manas.tech/blog/2015/10/22/middleman-search-client-side-search-in-your-middleman-site.html
 
 ## Installation
 
