@@ -26,7 +26,7 @@ activate :search do |search|
   search.resources = ['blog/', 'index.html', 'contactus/index.html']
 
   search.index_path = 'search/lunr-index.json' # defaults to `search.json`
-  
+
   search.lunr_dirs = ['source/vendor/lunr-custom/'] # optional alternate paths where to look for lunr js files
 
   search.language = 'es' # defaults to 'en'
@@ -123,6 +123,13 @@ Note that if you add a function to the pipeline, it will also be loaded when de-
 <%= search_lunr_js_pipeline %>
 ```
 
+You can also remove pipeline functions that Lunr.js enables by default: trimmer, stemmer, and stopWordFilter.
+
+```ruby
+search.pipeline_remove = [
+  'stopWordFilter'
+]
+```
 
 ## Index file
 
