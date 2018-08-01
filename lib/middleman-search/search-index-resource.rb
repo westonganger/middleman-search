@@ -64,7 +64,7 @@ module Middleman
           source << "this.pipeline.add(lunr.Pipeline.registeredFunctions.#{name});"
         end
 
-        if @tokenizer_separator
+        if @tokenizer_separator.nil?
           source << "this.tokenizerFn.seperator = #{@tokenizer_separator}"
         end
 
