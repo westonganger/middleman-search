@@ -9,6 +9,7 @@ module Middleman
         @callback = options[:before_index]
         @pipeline = options[:pipeline]
         @pipeline_remove = options[:pipeline_remove]
+        @tokenizer_separator = options[:tokenizer_separator]
         @cache_index = options[:cache]
         @language = options[:language]
         @lunr_dirs = options[:lunr_dirs] + [File.expand_path("../../../vendor/assets/javascripts/", __FILE__)]
@@ -61,6 +62,10 @@ module Middleman
         # Add functions to pipeline (just registering them isn't enough)
         @pipeline.each do |name, function|
           source << "this.pipeline.add(lunr.Pipeline.registeredFunctions.#{name});"
+        end
+
+        if @tokenizer_separator
+          source << "this.tokenizerFn.seperator = #{@tokenizer_separator}"
         end
 
         # Use language if set
