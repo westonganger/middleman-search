@@ -9,6 +9,7 @@ module Middleman
     option :index_path, 'search.json', 'Index file path'
     option :pipeline, {}, 'Javascript pipeline functions to use in lunr index'
     option :pipeline_remove, {}, 'Default pipeline functions to remove'
+    option :tokenizer_separator, {}, 'Replace the default tokizer separator'
     option :cache, false, 'Avoid the cache to be rebuilt on every request in development mode'
     option :language, 'en', 'Language code ("es", "fr") to use when indexing site\'s content'
     option :lunr_dirs, [], 'Directories in which to look for custom lunr.js files'
