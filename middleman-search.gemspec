@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'middleman-search/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "middleman-search"
+  spec.name          = "middleman-search-gds"
   spec.version       = MiddlemanSearch::VERSION
-  spec.authors       = ["Matías García Isaía", "Santiago Palladino"]
-  spec.email         = ["mgarcia@manas.com.ar", "spalladino@manas.com.ar"]
+  spec.authors       = ["Government Digital Service", "Matías García Isaía", "Santiago Palladino"]
+  spec.email         = ["govuk-dev@digital.cabinet-office.gov.uk", "mgarcia@manas.com.ar", "spalladino@manas.com.ar"]
   spec.summary       = %q{LunrJS-based search for Middleman}
-  spec.description   = %q{LunrJS-based search for Middleman}
-  spec.homepage      = "http://github.com/manastech/middleman-search"
+  spec.description   = %q{LunrJS-based search for Middleman. This is an unofficial fork of the middleman-search gem.}
+  spec.homepage      = "http://github.com/alphagov/middleman-search"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
