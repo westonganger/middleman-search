@@ -128,15 +128,21 @@ module Middleman
       def value_for(resource, field, opts={})
         case field.to_s
         when 'content'
+          overridden_content = retrieve_custom_value(resource, field)
+          return overridden_content unless overridden_content.nil?
 
           html = resource.render( { :layout => false }, { :current_path => resource.path } )
           Nokogiri::HTML(html).xpath("//text()").text
         when 'url'
           resource.url
         else
-          value = resource.data.send(field) || resource.metadata.fetch(:options, {}).fetch(field, nil)
-          value ? Array(value).compact.join(" ") : nil
+          retrieve_custom_value(resource, field)
         end
+      end
+
+      def retrieve_custom_value(resource, field)
+        value = resource.data.send(field) || resource.metadata.fetch(:options, {}).fetch(field, nil)
+        value ? Array(value).compact.join(" ") : nil
       end
 
       private
