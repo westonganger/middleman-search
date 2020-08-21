@@ -84,7 +84,7 @@ module Middleman
         store = Hash.new
 
         # Iterate over all resources and build index
-        @app.sitemap.resources.each_with_index do |resource, id|
+        @app.sitemap.resources.to_a.each_with_index do |resource, id|
           begin
             catch(:skip) do
               next if resource.data['index'] == false
