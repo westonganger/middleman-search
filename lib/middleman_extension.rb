@@ -1,1 +1,1 @@
-require "middleman-search"
+require "middleman-search-gds"
